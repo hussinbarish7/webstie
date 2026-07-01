@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Payment | Webstie</title>
+  <link rel="stylesheet" href="css/payment.css" />
+</head>
+<body>
+  <main class="payment-page">
+    <section class="payment-card">
+      <header class="payment-header">
+        <h1>Checkout</h1>
+        <p>Complete your payment details</p>
+      </header>
+
+      <div class="payment-methods">
+        <button class="method active" type="button">💳 Card</button>
+        <button class="method" type="button">🅿️ PayPal</button>
+        <button class="method" type="button">🍎 Apple Pay</button>
+      </div>
+
+      <form id="paymentForm" class="payment-form" novalidate>
+        <label>
+          Cardholder Name
+          <input type="text" id="cardName" placeholder="Hussin Barish" required />
+        </label>
+
+        <label>
+          Card Number
+          <input type="text" id="cardNumber" maxlength="19" placeholder="1234 5678 9012 3456" required />
+        </label>
+
+        <div class="row">
+          <label>
+            Expiry Date
+            <input type="text" id="expiry" maxlength="5" placeholder="MM/YY" required />
+          </label>
+
+          <label>
+            CVV
+            <input type="password" id="cvv" maxlength="4" placeholder="123" required />
+          </label>
+        </div>
+
+        <label>
+          Country
+          <select id="country" required>
+            <option value="">Select country</option>
+            <option>United States</option>
+            <option>United Kingdom</option>
+            <option>United Arab Emirates</option>
+            <option>Saudi Arabia</option>
+            <option>India</option>
+          </select>
+        </label>
+
+        <button class="pay-btn" type="submit">Pay Now</button>
+        <p class="note">UI demo only — no real payment is processed.</p>
+      </form>
+    </section>
+
+    <aside class="summary-card">
+      <h2>Order Summary</h2>
+      <div class="item">
+        <span>Premium Plan</span>
+        <strong>$29.00</strong>
+      </div>
+      <div class="item">
+        <span>Tax</span>
+        <strong>$2.00</strong>
+      </div>
+      <hr />
+      <div class="item total">
+        <span>Total</span>
+        <strong>$31.00</strong>
+      </div>
+
+      <div id="successBox" class="success hidden">
+        ✅ Payment successful (demo)
+      </div>
+    </aside>
+  </main>
+
+  <script src="js/payment.js"></script>
+</body>
+</html>
